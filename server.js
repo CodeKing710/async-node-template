@@ -20,5 +20,5 @@
   app.get('*', async (req,res) => {res.status(404).json({msg: "Err not found"})});
 
   //Listener
-  http.createServer(app).listen(PORT);
+  http.createServer(app).listen(PORT, console.log("Listening..."));
 })()
