@@ -16,8 +16,12 @@
   app.use(express.json());
 
   //Routes
-  app.get('/', async (req, res) => {});
-  app.get('*', async (req,res) => {res.status(404).json({msg: "Err not found"})});
+  app.get('/', async (req, res) => {
+    res.send("index.html")
+  });
+  app.get('*', async (req,res) => {
+    res.status(404).send("Err page not found")
+  });
 
   //Listener
   http.createServer(app).listen(PORT, console.log("Listening..."));
